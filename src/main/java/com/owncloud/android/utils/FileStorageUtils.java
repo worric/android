@@ -197,6 +197,7 @@ public final class FileStorageUtils {
         file.setUnreadCommentsCount(remote.getUnreadCommentsCount());
         file.setOwnerId(remote.getOwnerId());
         file.setOwnerDisplayName(remote.getOwnerDisplayName());
+        file.setNote(remote.getNote());
 
         return file;
     }

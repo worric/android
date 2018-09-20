@@ -721,104 +721,104 @@ public class FileContentProvider extends ContentProvider {
     }
 
     private void createFilesTable(SQLiteDatabase db) {
-
         db.execSQL("CREATE TABLE " + ProviderTableMeta.FILE_TABLE_NAME + "("
-                + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "
-                + ProviderTableMeta.FILE_NAME + TEXT
-                + ProviderTableMeta.FILE_ENCRYPTED_NAME + TEXT
-                + ProviderTableMeta.FILE_PATH + TEXT
-                + ProviderTableMeta.FILE_PARENT + INTEGER
-                + ProviderTableMeta.FILE_CREATION + INTEGER
-                + ProviderTableMeta.FILE_MODIFIED + INTEGER
-                + ProviderTableMeta.FILE_CONTENT_TYPE + TEXT
-                + ProviderTableMeta.FILE_CONTENT_LENGTH + INTEGER
-                + ProviderTableMeta.FILE_STORAGE_PATH + TEXT
-                + ProviderTableMeta.FILE_ACCOUNT_OWNER + TEXT
-                + ProviderTableMeta.FILE_LAST_SYNC_DATE + INTEGER
-                + ProviderTableMeta.FILE_LAST_SYNC_DATE_FOR_DATA + INTEGER
-                + ProviderTableMeta.FILE_MODIFIED_AT_LAST_SYNC_FOR_DATA + INTEGER
-                + ProviderTableMeta.FILE_ETAG + TEXT
+                       + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "
+                       + ProviderTableMeta.FILE_NAME + TEXT
+                       + ProviderTableMeta.FILE_ENCRYPTED_NAME + TEXT
+                       + ProviderTableMeta.FILE_PATH + TEXT
+                       + ProviderTableMeta.FILE_PARENT + INTEGER
+                       + ProviderTableMeta.FILE_CREATION + INTEGER
+                       + ProviderTableMeta.FILE_MODIFIED + INTEGER
+                       + ProviderTableMeta.FILE_CONTENT_TYPE + TEXT
+                       + ProviderTableMeta.FILE_CONTENT_LENGTH + INTEGER
+                       + ProviderTableMeta.FILE_STORAGE_PATH + TEXT
+                       + ProviderTableMeta.FILE_ACCOUNT_OWNER + TEXT
+                       + ProviderTableMeta.FILE_LAST_SYNC_DATE + INTEGER
+                       + ProviderTableMeta.FILE_LAST_SYNC_DATE_FOR_DATA + INTEGER
+                       + ProviderTableMeta.FILE_MODIFIED_AT_LAST_SYNC_FOR_DATA + INTEGER
+                       + ProviderTableMeta.FILE_ETAG + TEXT
                        + ProviderTableMeta.FILE_ETAG_ON_SERVER + TEXT
-                + ProviderTableMeta.FILE_SHARED_VIA_LINK + INTEGER
-                + ProviderTableMeta.FILE_PUBLIC_LINK + TEXT
-                + ProviderTableMeta.FILE_PERMISSIONS + " TEXT null,"
-                + ProviderTableMeta.FILE_REMOTE_ID + " TEXT null,"
+                       + ProviderTableMeta.FILE_SHARED_VIA_LINK + INTEGER
+                       + ProviderTableMeta.FILE_PUBLIC_LINK + TEXT
+                       + ProviderTableMeta.FILE_PERMISSIONS + " TEXT null,"
+                       + ProviderTableMeta.FILE_REMOTE_ID + " TEXT null,"
                        + ProviderTableMeta.FILE_UPDATE_THUMBNAIL + INTEGER //boolean
-                + ProviderTableMeta.FILE_IS_DOWNLOADING + INTEGER //boolean
-                + ProviderTableMeta.FILE_FAVORITE + INTEGER // boolean
-                + ProviderTableMeta.FILE_IS_ENCRYPTED + INTEGER // boolean
-                + ProviderTableMeta.FILE_ETAG_IN_CONFLICT + TEXT
-                + ProviderTableMeta.FILE_SHARED_WITH_SHAREE + INTEGER
-                + ProviderTableMeta.FILE_MOUNT_TYPE + INTEGER
-                + ProviderTableMeta.FILE_HAS_PREVIEW + INTEGER
-                + ProviderTableMeta.FILE_UNREAD_COMMENTS_COUNT + INTEGER
-                + ProviderTableMeta.FILE_OWNER_ID + TEXT
-                + ProviderTableMeta.FILE_OWNER_DISPLAY_NAME + " TEXT);"
+                       + ProviderTableMeta.FILE_IS_DOWNLOADING + INTEGER //boolean
+                       + ProviderTableMeta.FILE_FAVORITE + INTEGER // boolean
+                       + ProviderTableMeta.FILE_IS_ENCRYPTED + INTEGER // boolean
+                       + ProviderTableMeta.FILE_ETAG_IN_CONFLICT + TEXT
+                       + ProviderTableMeta.FILE_SHARED_WITH_SHAREE + INTEGER
+                       + ProviderTableMeta.FILE_MOUNT_TYPE + INTEGER
+                       + ProviderTableMeta.FILE_HAS_PREVIEW + INTEGER
+                       + ProviderTableMeta.FILE_UNREAD_COMMENTS_COUNT + INTEGER
+                       + ProviderTableMeta.FILE_OWNER_ID + TEXT
+                       + ProviderTableMeta.FILE_OWNER_DISPLAY_NAME + TEXT
+                       + ProviderTableMeta.FILE_NOTE + " TEXT);"
         );
     }
 
     private void createOCSharesTable(SQLiteDatabase db) {
         // Create OCShares table
         db.execSQL("CREATE TABLE " + ProviderTableMeta.OCSHARES_TABLE_NAME + "("
-                + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "
-                + ProviderTableMeta.OCSHARES_FILE_SOURCE + INTEGER
-                + ProviderTableMeta.OCSHARES_ITEM_SOURCE + INTEGER
-                + ProviderTableMeta.OCSHARES_SHARE_TYPE + INTEGER
-                + ProviderTableMeta.OCSHARES_SHARE_WITH + TEXT
-                + ProviderTableMeta.OCSHARES_PATH + TEXT
-                + ProviderTableMeta.OCSHARES_PERMISSIONS + INTEGER
-                + ProviderTableMeta.OCSHARES_SHARED_DATE + INTEGER
-                + ProviderTableMeta.OCSHARES_EXPIRATION_DATE + INTEGER
-                + ProviderTableMeta.OCSHARES_TOKEN + TEXT
-                + ProviderTableMeta.OCSHARES_SHARE_WITH_DISPLAY_NAME + TEXT
-                + ProviderTableMeta.OCSHARES_IS_DIRECTORY + INTEGER  // boolean
-                + ProviderTableMeta.OCSHARES_USER_ID + INTEGER
-                + ProviderTableMeta.OCSHARES_ID_REMOTE_SHARED + INTEGER
-                + ProviderTableMeta.OCSHARES_ACCOUNT_OWNER + TEXT
-                + ProviderTableMeta.OCSHARES_IS_PASSWORD_PROTECTED + INTEGER
-            + ProviderTableMeta.OCSHARES_NOTE + TEXT
-            + ProviderTableMeta.OCSHARES_HIDE_DOWNLOAD + " INTEGER );");
+                       + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "
+                       + ProviderTableMeta.OCSHARES_FILE_SOURCE + INTEGER
+                       + ProviderTableMeta.OCSHARES_ITEM_SOURCE + INTEGER
+                       + ProviderTableMeta.OCSHARES_SHARE_TYPE + INTEGER
+                       + ProviderTableMeta.OCSHARES_SHARE_WITH + TEXT
+                       + ProviderTableMeta.OCSHARES_PATH + TEXT
+                       + ProviderTableMeta.OCSHARES_PERMISSIONS + INTEGER
+                       + ProviderTableMeta.OCSHARES_SHARED_DATE + INTEGER
+                       + ProviderTableMeta.OCSHARES_EXPIRATION_DATE + INTEGER
+                       + ProviderTableMeta.OCSHARES_TOKEN + TEXT
+                       + ProviderTableMeta.OCSHARES_SHARE_WITH_DISPLAY_NAME + TEXT
+                       + ProviderTableMeta.OCSHARES_IS_DIRECTORY + INTEGER  // boolean
+                       + ProviderTableMeta.OCSHARES_USER_ID + INTEGER
+                       + ProviderTableMeta.OCSHARES_ID_REMOTE_SHARED + INTEGER
+                       + ProviderTableMeta.OCSHARES_ACCOUNT_OWNER + TEXT
+                       + ProviderTableMeta.OCSHARES_IS_PASSWORD_PROTECTED + INTEGER
+                       + ProviderTableMeta.OCSHARES_NOTE + TEXT
+                       + ProviderTableMeta.OCSHARES_HIDE_DOWNLOAD + " INTEGER );");
     }
 
     private void createCapabilitiesTable(SQLiteDatabase db) {
         // Create capabilities table
         db.execSQL("CREATE TABLE " + ProviderTableMeta.CAPABILITIES_TABLE_NAME + "("
-                + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "
-                + ProviderTableMeta.CAPABILITIES_ACCOUNT_NAME + TEXT
-                + ProviderTableMeta.CAPABILITIES_VERSION_MAYOR + INTEGER
-                + ProviderTableMeta.CAPABILITIES_VERSION_MINOR + INTEGER
-                + ProviderTableMeta.CAPABILITIES_VERSION_MICRO + INTEGER
-                + ProviderTableMeta.CAPABILITIES_VERSION_STRING + TEXT
-                + ProviderTableMeta.CAPABILITIES_VERSION_EDITION + TEXT
-                + ProviderTableMeta.CAPABILITIES_CORE_POLLINTERVAL + INTEGER
-                + ProviderTableMeta.CAPABILITIES_SHARING_API_ENABLED + INTEGER // boolean
-                + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_ENABLED + INTEGER  // boolean
-                + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_PASSWORD_ENFORCED + INTEGER    // boolean
-                + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_EXPIRE_DATE_ENABLED + INTEGER  // boolean
-                + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_EXPIRE_DATE_DAYS + INTEGER
-                + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_EXPIRE_DATE_ENFORCED + INTEGER // boolean
-                + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_SEND_MAIL + INTEGER    // boolean
-                + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_UPLOAD + INTEGER       // boolean
-                + ProviderTableMeta.CAPABILITIES_SHARING_USER_SEND_MAIL + INTEGER      // boolean
-                + ProviderTableMeta.CAPABILITIES_SHARING_RESHARING + INTEGER           // boolean
-                + ProviderTableMeta.CAPABILITIES_SHARING_FEDERATION_OUTGOING + INTEGER     // boolean
-                + ProviderTableMeta.CAPABILITIES_SHARING_FEDERATION_INCOMING + INTEGER     // boolean
-                + ProviderTableMeta.CAPABILITIES_FILES_BIGFILECHUNKING + INTEGER   // boolean
-                + ProviderTableMeta.CAPABILITIES_FILES_UNDELETE + INTEGER  // boolean
-                + ProviderTableMeta.CAPABILITIES_FILES_VERSIONING + INTEGER   // boolean
-                + ProviderTableMeta.CAPABILITIES_FILES_DROP + INTEGER  // boolean
-                + ProviderTableMeta.CAPABILITIES_EXTERNAL_LINKS + INTEGER  // boolean
-                + ProviderTableMeta.CAPABILITIES_SERVER_NAME + TEXT
-                + ProviderTableMeta.CAPABILITIES_SERVER_COLOR + TEXT
-                + ProviderTableMeta.CAPABILITIES_SERVER_TEXT_COLOR + TEXT
-                + ProviderTableMeta.CAPABILITIES_SERVER_ELEMENT_COLOR + TEXT
-                + ProviderTableMeta.CAPABILITIES_SERVER_SLOGAN + TEXT
-                + ProviderTableMeta.CAPABILITIES_SERVER_BACKGROUND_URL + TEXT
-                + ProviderTableMeta.CAPABILITIES_END_TO_END_ENCRYPTION + INTEGER
-                + ProviderTableMeta.CAPABILITIES_ACTIVITY + INTEGER
-                + ProviderTableMeta.CAPABILITIES_SERVER_BACKGROUND_DEFAULT + INTEGER
-                + ProviderTableMeta.CAPABILITIES_SERVER_BACKGROUND_PLAIN + INTEGER
-                + ProviderTableMeta.CAPABILITIES_RICHDOCUMENT + INTEGER
+                       + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "
+                       + ProviderTableMeta.CAPABILITIES_ACCOUNT_NAME + TEXT
+                       + ProviderTableMeta.CAPABILITIES_VERSION_MAYOR + INTEGER
+                       + ProviderTableMeta.CAPABILITIES_VERSION_MINOR + INTEGER
+                       + ProviderTableMeta.CAPABILITIES_VERSION_MICRO + INTEGER
+                       + ProviderTableMeta.CAPABILITIES_VERSION_STRING + TEXT
+                       + ProviderTableMeta.CAPABILITIES_VERSION_EDITION + TEXT
+                       + ProviderTableMeta.CAPABILITIES_CORE_POLLINTERVAL + INTEGER
+                       + ProviderTableMeta.CAPABILITIES_SHARING_API_ENABLED + INTEGER // boolean
+                       + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_ENABLED + INTEGER  // boolean
+                       + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_PASSWORD_ENFORCED + INTEGER    // boolean
+                       + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_EXPIRE_DATE_ENABLED + INTEGER  // boolean
+                       + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_EXPIRE_DATE_DAYS + INTEGER
+                       + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_EXPIRE_DATE_ENFORCED + INTEGER // boolean
+                       + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_SEND_MAIL + INTEGER    // boolean
+                       + ProviderTableMeta.CAPABILITIES_SHARING_PUBLIC_UPLOAD + INTEGER       // boolean
+                       + ProviderTableMeta.CAPABILITIES_SHARING_USER_SEND_MAIL + INTEGER      // boolean
+                       + ProviderTableMeta.CAPABILITIES_SHARING_RESHARING + INTEGER           // boolean
+                       + ProviderTableMeta.CAPABILITIES_SHARING_FEDERATION_OUTGOING + INTEGER     // boolean
+                       + ProviderTableMeta.CAPABILITIES_SHARING_FEDERATION_INCOMING + INTEGER     // boolean
+                       + ProviderTableMeta.CAPABILITIES_FILES_BIGFILECHUNKING + INTEGER   // boolean
+                       + ProviderTableMeta.CAPABILITIES_FILES_UNDELETE + INTEGER  // boolean
+                       + ProviderTableMeta.CAPABILITIES_FILES_VERSIONING + INTEGER   // boolean
+                       + ProviderTableMeta.CAPABILITIES_FILES_DROP + INTEGER  // boolean
+                       + ProviderTableMeta.CAPABILITIES_EXTERNAL_LINKS + INTEGER  // boolean
+                       + ProviderTableMeta.CAPABILITIES_SERVER_NAME + TEXT
+                       + ProviderTableMeta.CAPABILITIES_SERVER_COLOR + TEXT
+                       + ProviderTableMeta.CAPABILITIES_SERVER_TEXT_COLOR + TEXT
+                       + ProviderTableMeta.CAPABILITIES_SERVER_ELEMENT_COLOR + TEXT
+                       + ProviderTableMeta.CAPABILITIES_SERVER_SLOGAN + TEXT
+                       + ProviderTableMeta.CAPABILITIES_SERVER_BACKGROUND_URL + TEXT
+                       + ProviderTableMeta.CAPABILITIES_END_TO_END_ENCRYPTION + INTEGER
+                       + ProviderTableMeta.CAPABILITIES_ACTIVITY + INTEGER
+                       + ProviderTableMeta.CAPABILITIES_SERVER_BACKGROUND_DEFAULT + INTEGER
+                       + ProviderTableMeta.CAPABILITIES_SERVER_BACKGROUND_PLAIN + INTEGER
+                       + ProviderTableMeta.CAPABILITIES_RICHDOCUMENT + INTEGER
                        + ProviderTableMeta.CAPABILITIES_RICHDOCUMENT_MIMETYPE_LIST + TEXT
                        + ProviderTableMeta.CAPABILITIES_RICHDOCUMENT_DIRECT_EDITING + INTEGER
                        + ProviderTableMeta.CAPABILITIES_RICHDOCUMENT_TEMPLATES + " INTEGER );");
@@ -827,23 +827,22 @@ public class FileContentProvider extends ContentProvider {
     private void createUploadsTable(SQLiteDatabase db) {
         // Create uploads table
         db.execSQL("CREATE TABLE " + ProviderTableMeta.UPLOADS_TABLE_NAME + "("
-                + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "
-                + ProviderTableMeta.UPLOADS_LOCAL_PATH + TEXT
-                + ProviderTableMeta.UPLOADS_REMOTE_PATH + TEXT
-                + ProviderTableMeta.UPLOADS_ACCOUNT_NAME + TEXT
-                + ProviderTableMeta.UPLOADS_FILE_SIZE + " LONG, "
-                + ProviderTableMeta.UPLOADS_STATUS + INTEGER               // UploadStatus
-                + ProviderTableMeta.UPLOADS_LOCAL_BEHAVIOUR + INTEGER      // Upload LocalBehaviour
-                + ProviderTableMeta.UPLOADS_UPLOAD_TIME + INTEGER
-                + ProviderTableMeta.UPLOADS_FORCE_OVERWRITE + INTEGER  // boolean
-                + ProviderTableMeta.UPLOADS_IS_CREATE_REMOTE_FOLDER + INTEGER  // boolean
-                + ProviderTableMeta.UPLOADS_UPLOAD_END_TIMESTAMP + INTEGER
-                + ProviderTableMeta.UPLOADS_LAST_RESULT + INTEGER     // Upload LastResult
-                + ProviderTableMeta.UPLOADS_IS_WHILE_CHARGING_ONLY + INTEGER  // boolean
-                + ProviderTableMeta.UPLOADS_IS_WIFI_ONLY + INTEGER // boolean
-                + ProviderTableMeta.UPLOADS_CREATED_BY + INTEGER    // Upload createdBy
-                + ProviderTableMeta.UPLOADS_FOLDER_UNLOCK_TOKEN + " TEXT );");
-
+                       + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "
+                       + ProviderTableMeta.UPLOADS_LOCAL_PATH + TEXT
+                       + ProviderTableMeta.UPLOADS_REMOTE_PATH + TEXT
+                       + ProviderTableMeta.UPLOADS_ACCOUNT_NAME + TEXT
+                       + ProviderTableMeta.UPLOADS_FILE_SIZE + " LONG, "
+                       + ProviderTableMeta.UPLOADS_STATUS + INTEGER               // UploadStatus
+                       + ProviderTableMeta.UPLOADS_LOCAL_BEHAVIOUR + INTEGER      // Upload LocalBehaviour
+                       + ProviderTableMeta.UPLOADS_UPLOAD_TIME + INTEGER
+                       + ProviderTableMeta.UPLOADS_FORCE_OVERWRITE + INTEGER  // boolean
+                       + ProviderTableMeta.UPLOADS_IS_CREATE_REMOTE_FOLDER + INTEGER  // boolean
+                       + ProviderTableMeta.UPLOADS_UPLOAD_END_TIMESTAMP + INTEGER
+                       + ProviderTableMeta.UPLOADS_LAST_RESULT + INTEGER     // Upload LastResult
+                       + ProviderTableMeta.UPLOADS_IS_WHILE_CHARGING_ONLY + INTEGER  // boolean
+                       + ProviderTableMeta.UPLOADS_IS_WIFI_ONLY + INTEGER // boolean
+                       + ProviderTableMeta.UPLOADS_CREATED_BY + INTEGER    // Upload createdBy
+                       + ProviderTableMeta.UPLOADS_FOLDER_UNLOCK_TOKEN + " TEXT );");
 
         /* before:
         // PRIMARY KEY should always imply NOT NULL. Unfortunately, due to a
@@ -857,28 +856,28 @@ public class FileContentProvider extends ContentProvider {
 
     private void createSyncedFoldersTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + ProviderTableMeta.SYNCED_FOLDERS_TABLE_NAME + "("
-                + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "                          // id
-                + ProviderTableMeta.SYNCED_FOLDER_LOCAL_PATH + " TEXT, "           // local path
-                + ProviderTableMeta.SYNCED_FOLDER_REMOTE_PATH + " TEXT, "           // remote path
-                + ProviderTableMeta.SYNCED_FOLDER_WIFI_ONLY + " INTEGER, "          // wifi_only
-                + ProviderTableMeta.SYNCED_FOLDER_CHARGING_ONLY + " INTEGER, "      // charging only
-                + ProviderTableMeta.SYNCED_FOLDER_ENABLED + " INTEGER, "            // enabled
-                + ProviderTableMeta.SYNCED_FOLDER_SUBFOLDER_BY_DATE + " INTEGER, "  // subfolder by date
-                + ProviderTableMeta.SYNCED_FOLDER_ACCOUNT + "  TEXT, "              // account
-                + ProviderTableMeta.SYNCED_FOLDER_UPLOAD_ACTION + " INTEGER, "     // upload action
-                + ProviderTableMeta.SYNCED_FOLDER_TYPE + " INTEGER );"               // type
+                       + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "                          // id
+                       + ProviderTableMeta.SYNCED_FOLDER_LOCAL_PATH + " TEXT, "           // local path
+                       + ProviderTableMeta.SYNCED_FOLDER_REMOTE_PATH + " TEXT, "           // remote path
+                       + ProviderTableMeta.SYNCED_FOLDER_WIFI_ONLY + " INTEGER, "          // wifi_only
+                       + ProviderTableMeta.SYNCED_FOLDER_CHARGING_ONLY + " INTEGER, "      // charging only
+                       + ProviderTableMeta.SYNCED_FOLDER_ENABLED + " INTEGER, "            // enabled
+                       + ProviderTableMeta.SYNCED_FOLDER_SUBFOLDER_BY_DATE + " INTEGER, "  // subfolder by date
+                       + ProviderTableMeta.SYNCED_FOLDER_ACCOUNT + "  TEXT, "              // account
+                       + ProviderTableMeta.SYNCED_FOLDER_UPLOAD_ACTION + " INTEGER, "     // upload action
+                       + ProviderTableMeta.SYNCED_FOLDER_TYPE + " INTEGER );"               // type
         );
     }
 
     private void createExternalLinksTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + ProviderTableMeta.EXTERNAL_LINKS_TABLE_NAME + "("
-                + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "          // id
-                + ProviderTableMeta.EXTERNAL_LINKS_ICON_URL + " TEXT, "     // icon url
-                + ProviderTableMeta.EXTERNAL_LINKS_LANGUAGE + " TEXT, "     // language
-                + ProviderTableMeta.EXTERNAL_LINKS_TYPE + " INTEGER, "      // type
-                + ProviderTableMeta.EXTERNAL_LINKS_NAME + " TEXT, "         // name
-                + ProviderTableMeta.EXTERNAL_LINKS_URL + " TEXT, "          // url
-                + ProviderTableMeta.EXTERNAL_LINKS_REDIRECT + " INTEGER );" // redirect
+                       + ProviderTableMeta._ID + " INTEGER PRIMARY KEY, "          // id
+                       + ProviderTableMeta.EXTERNAL_LINKS_ICON_URL + " TEXT, "     // icon url
+                       + ProviderTableMeta.EXTERNAL_LINKS_LANGUAGE + " TEXT, "     // language
+                       + ProviderTableMeta.EXTERNAL_LINKS_TYPE + " INTEGER, "      // type
+                       + ProviderTableMeta.EXTERNAL_LINKS_NAME + " TEXT, "         // name
+                       + ProviderTableMeta.EXTERNAL_LINKS_URL + " TEXT, "          // url
+                       + ProviderTableMeta.EXTERNAL_LINKS_REDIRECT + " INTEGER );" // redirect
         );
     }
 
@@ -1929,6 +1928,24 @@ public class FileContentProvider extends ContentProvider {
                                    ADD_COLUMN + ProviderTableMeta.FILE_OWNER_ID + " TEXT ");
                     db.execSQL(ALTER_TABLE + ProviderTableMeta.FILE_TABLE_NAME +
                                    ADD_COLUMN + ProviderTableMeta.FILE_OWNER_DISPLAY_NAME + " TEXT ");
+
+                    upgraded = true;
+                    db.setTransactionSuccessful();
+                } finally {
+                    db.endTransaction();
+                }
+            }
+
+            if (!upgraded) {
+                Log_OC.i(SQL, String.format(Locale.ENGLISH, UPGRADE_VERSION_MSG, oldVersion, newVersion));
+            }
+
+            if (oldVersion < 44 && newVersion >= 44) {
+                Log_OC.i(SQL, "Entering in the #44 add note to file table");
+                db.beginTransaction();
+                try {
+                    db.execSQL(ALTER_TABLE + ProviderTableMeta.FILE_TABLE_NAME +
+                                   ADD_COLUMN + ProviderTableMeta.FILE_NOTE + " TEXT ");
 
                     upgraded = true;
                     db.setTransactionSuccessful();
