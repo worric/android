@@ -862,4 +862,6 @@
     <string name="notification_action_failed">Failed to execute action.</string>
     <string name="remove_push_notification">Remove</string>
     <string name="new_notification">New Notification</string>
+    <string name="shared_avatar_desc">Avatar from shared user</string>
+    <string name="shared_with_you_by">Shared with you by %1$s</string>
 </resources>

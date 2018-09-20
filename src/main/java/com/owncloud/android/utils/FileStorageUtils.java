@@ -195,6 +195,8 @@ public final class FileStorageUtils {
         file.setMountType(remote.getMountType());
         file.setPreviewAvailable(remote.isHasPreview());
         file.setUnreadCommentsCount(remote.getUnreadCommentsCount());
+        file.setOwnerId(remote.getOwnerId());
+        file.setOwnerDisplayName(remote.getOwnerDisplayName());
 
         return file;
     }
