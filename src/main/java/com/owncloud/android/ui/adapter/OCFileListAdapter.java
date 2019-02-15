@@ -311,7 +311,6 @@ public class OCFileListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 OCFileListItemViewHolder itemViewHolder = (OCFileListItemViewHolder) holder;
 
                 if (!TextUtils.isEmpty(file.getOwnerId()) && !mAccount.name.split("@")[0].equals(file.getOwnerId())) {
-
                     Resources resources = mContext.getResources();
                     itemViewHolder.sharedAvatar.setTag(file.getOwnerId());
                     DisplayUtils.setAvatar(mAccount, file.getOwnerId(), this,
@@ -526,25 +525,28 @@ public class OCFileListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     private void showShareIcon(OCFileListGridImageViewHolder gridViewHolder, OCFile file) {
         ImageView sharedIconView = gridViewHolder.shared;
-        sharedIconView.setVisibility(View.VISIBLE);
 
-        if (file.isSharedWithSharee() || file.isSharedWithMe()) {
-            sharedIconView.setImageResource(R.drawable.shared_via_users);
-            sharedIconView.setContentDescription(mContext.getString(R.string.shared_icon_shared));
-        } else if (file.isSharedViaLink()) {
-            sharedIconView.setImageResource(R.drawable.shared_via_link);
-            sharedIconView.setContentDescription(mContext.getString(R.string.shared_icon_shared_via_link));
-        } else {
-            sharedIconView.setImageResource(R.drawable.ic_unshared);
-            sharedIconView.setContentDescription(mContext.getString(R.string.shared_icon_share));
-        }
+        if (gridViewHolder instanceof OCFileListItemViewHolder || file.getUnreadCommentsCount() == 0) {
+            sharedIconView.setVisibility(View.VISIBLE);
 
-        if (!TextUtils.isEmpty(file.getOwnerId()) && !mAccount.name.split("@")[0].equals(file.getOwnerId())) { // TODO refactor
-            sharedIconView.setOnClickListener(view -> ocFileListFragmentInterface.showShareDetailView(file));
+            if (file.isSharedWithSharee() || file.isSharedWithMe()) {
+                sharedIconView.setImageResource(R.drawable.shared_via_users);
+                sharedIconView.setContentDescription(mContext.getString(R.string.shared_icon_shared));
+            } else if (file.isSharedViaLink()) {
+                sharedIconView.setImageResource(R.drawable.shared_via_link);
+                sharedIconView.setContentDescription(mContext.getString(R.string.shared_icon_shared_via_link));
+            } else {
+                sharedIconView.setImageResource(R.drawable.ic_unshared);
+                sharedIconView.setContentDescription(mContext.getString(R.string.shared_icon_share));
+            }
+            if (!TextUtils.isEmpty(file.getOwnerId()) && !mAccount.name.split("@")[0].equals(file.getOwnerId())) { // TODO refactor
+                sharedIconView.setOnClickListener(view -> ocFileListFragmentInterface.showShareDetailView(file));
+            } else {
+                sharedIconView.setOnClickListener(view -> ocFileListFragmentInterface.onShareIconClick(file));
+            }
         } else {
-            sharedIconView.setOnClickListener(view -> ocFileListFragmentInterface.onShareIconClick(file));
+            sharedIconView.setVisibility(View.GONE);
         }
-        // TODO     sharedIconView.setVisibility(View.GONE);
     }
 
     /**
@@ -757,7 +759,6 @@ public class OCFileListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     @Override
     public boolean shouldCallGeneratedCallback(String tag, Object callContext) {
-//        return ((ImageView) callContext).getTag().equals(tag);
         return false;
     }
 

@@ -878,7 +878,7 @@ public final class ThumbnailsCacheManager {
                 try {
                     return TextDrawable.createAvatar(mAccount.name, mAvatarRadius);
                 } catch (NoSuchAlgorithmException e) {
-                    e.printStackTrace();
+                    Log_OC.e(this, "Error creating avatar", e);
                 }
             }
 

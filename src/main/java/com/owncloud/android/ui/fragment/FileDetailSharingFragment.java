@@ -79,7 +79,6 @@ public class FileDetailSharingFragment extends Fragment implements UserListAdapt
 
     private static final String ARG_FILE = "FILE";
     private static final String ARG_ACCOUNT = "ACCOUNT";
-    private static final String TAG = FileDetailSharingFragment.class.getSimpleName();
 
     // to show share with users/groups info
     private List<OCShare> shares;
@@ -211,12 +210,18 @@ public class FileDetailSharingFragment extends Fragment implements UserListAdapt
     }
 
     private void setupView() {
-        setShareByLinkInfo(file.isSharedViaLink());
-        setShareWithUserInfo();
         setShareWithYou();
-        FileDetailSharingFragmentHelper.setupSearchView(
-            (SearchManager) fileDisplayActivity.getSystemService(Context.SEARCH_SERVICE), searchView,
-            fileDisplayActivity.getComponentName());
+
+        if (file.canReshare()) {
+            setShareByLinkInfo(file.isSharedViaLink());
+            setShareWithUserInfo();
+            FileDetailSharingFragmentHelper.setupSearchView(
+                (SearchManager) fileDisplayActivity.getSystemService(Context.SEARCH_SERVICE), searchView,
+                fileDisplayActivity.getComponentName());
+        } else {
+            searchView.setVisibility(View.GONE);
+            noList.setText(R.string.reshare_not_allowed);
+        }
     }
 
     /**
@@ -546,7 +551,7 @@ public class FileDetailSharingFragment extends Fragment implements UserListAdapt
      * Takes into account server capabilities before reading database.
      */
     public void refreshPublicShareFromDB() {
-        if (FileDetailSharingFragmentHelper.isPublicShareDisabled(capabilities)) {
+        if (FileDetailSharingFragmentHelper.isPublicShareDisabled(capabilities) || !file.canReshare()) {
             shareByLinkContainer.setVisibility(View.GONE);
         } else {
             // Get public share
